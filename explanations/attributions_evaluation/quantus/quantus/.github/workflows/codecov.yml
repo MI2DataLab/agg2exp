@@ -1,0 +1,38 @@
+name: codecov
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+  workflow_dispatch:
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.event_name }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  run:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Setup python 3.10
+        uses: actions/setup-python@v4
+        with:
+          cache: 'pip'
+          python-version: "3.9"
+
+      - name: Install tox-gh
+        run: pip install tox-gh
+
+      - name: Setup test environment
+        run: tox run -e coverage --notest
+
+      - name: Measure coverage.
+        run: tox run -e coverage
+
+      - name: Upload
+        uses: codecov/codecov-action@v3
+        with:
+          token: ${{ secrets.CODECOV_TOKEN }}
+          files: ./coverage.xml, coverage.xml

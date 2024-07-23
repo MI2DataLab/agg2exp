@@ -1,0 +1,44 @@
+name: Python package
+
+on:
+  # Run tests every night, to catch potentially breaking changes in dependencies.
+  schedule:
+    - cron: '0 0 * * *'
+  push:
+    branches:
+      - main
+  pull_request:
+  workflow_dispatch:
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.event_name }}-${{ github.ref }}
+  cancel-in-progress: true
+
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    name: Python Package
+    strategy:
+      fail-fast: false
+      matrix:
+        python-version: [ "3.7", "3.8", "3.9", "3.10", "3.11" ]
+    steps:
+      - uses: actions/checkout@v3
+      - name: Setup python ${{ matrix.python-version }}
+        uses: actions/setup-python@v4
+        with:
+          cache: 'pip'
+          python-version: ${{ matrix.python-version }}
+      - name: Install tox-gh
+        run: pip install tox-gh
+      - name: Setup test environment
+        run: tox run --notest
+      - name: Test with PyTest
+        run: tox run
+      - name: Test building package
+        run: |
+          tox run -e build
+          pip install dist/*.whl
+          cd /tmp
+          python3 -c "import quantus;quantus.__version__"
