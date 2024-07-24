@@ -41,3 +41,22 @@ Example aggregated explanations are available at `data/tsv2_test_aggregated_sg_e
 ![](images/global_lung_lower_lobe_left_tsv2.png)
 
 ![](images/global_pulmonary_vein_tsv2.png)
+# Citation
+ArXiv preprint can be found [here](https://arxiv.org/abs/2407.16653).
+
+If you find this repository useful, please consider citing this paper:
+
+```
+@article{chrabaszcz2024agg2exp,
+      title={Aggregated Attributions for Explanatory Analysis of 3D Segmentation Models}, 
+      author={Maciej Chrabaszcz and Hubert Baniecki and Piotr Komorowski and Szymon Płotka and Przemyslaw Biecek},
+      year={2024},
+      eprint={2407.16653},
+      archivePrefix={arXiv},
+      primaryClass={cs.CV},
+      url={https://arxiv.org/abs/2407.16653}, 
+}
+```
+
+# Acknowledgments
+This work was financially supported by the Polish National Center for Research and Development grant number INFOSTRATEG-I/0022/2021-00. We thank Mateusz Krzyzinski and Paulina Tomaszewska for valuable feedback on the initial version of this work.
