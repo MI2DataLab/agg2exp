@@ -1,5 +1,5 @@
 # Aggregated Attributions for Explanatory Analysis of 3D Segmentation Models
-This is official code of for paper "Aggregated Attributions for Explanatory Analysis of 3D Segmentation Models". 
+This is the official code for the paper "Aggregated Attributions for Explanatory Analysis of 3D Segmentation Models," accepted in the first round at the IEEE/CVF Winter Conference on Applications of Computer Vision (WACV) 2025.
 
 ![](images/agg2exp_graph2.png)
 
