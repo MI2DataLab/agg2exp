@@ -1,10 +1,11 @@
-# Aggregated Attributions for Explanatory Analysis of 3D Segmentation Models
-This is the official code for the paper "Aggregated Attributions for Explanatory Analysis of 3D Segmentation Models," accepted in the first round at the IEEE/CVF Winter Conference on Applications of Computer Vision (WACV) 2025.
+# Agg2Exp [WACV 2025 Oral]
+
+This is the official code for the [paper](https://openaccess.thecvf.com/content/WACV2025/html/Chrabaszcz_Aggregated_Attributions_for_Explanatory_Analysis_of_3D_Segmentation_Models_WACV_2025_paper.html) "Aggregated Attributions for Explanatory Analysis of 3D Segmentation Models," published at the 2025 IEEE/CVF Winter Conference on Applications of Computer Vision (WACV).
 
 ![](images/agg2exp_graph2.png)
 
 # Abstract
-Analysis of 3D segmentation models, especially in the context of medical imaging, is often limited to segmentation performance metrics that overlook the crucial aspect of explainability and bias. Currently, effectively explaining these models with saliency maps is challenging due to the high dimensions of input images multiplied by the ever-growing number of segmented class labels. To this end, we introduce Agg$^2$Exp, a methodology for aggregating fine-grained voxel attributions of the segmentation model's predictions. Unlike classical explanation methods that primarily focus on the local feature attribution, Agg$^2$Exp enables a more comprehensive global view on the importance of predicted segments in 3D images. Our benchmarking experiments show that gradient-based voxel attributions are more faithful to the model's predictions than perturbation-based explanations. As a concrete use-case, we apply Agg$^2$Exp to discover knowledge acquired by the Swin UNEt TRansformer model trained on the TotalSegmentator v2 dataset for segmenting anatomical structures in computed tomography medical images. Agg$^2$Exp facilitates the explanatory analysis of large segmentation models beyond their predictive performance. 
+> Analysis of 3D segmentation models, especially in the context of medical imaging, is often limited to segmentation performance metrics that overlook the crucial aspect of explainability and bias. Currently, effectively explaining these models with saliency maps is challenging due to the high dimensions of input images multiplied by the ever-growing number of segmented class labels. To this end, we introduce Agg$^2$Exp, a methodology for aggregating fine-grained voxel attributions of the segmentation model's predictions. Unlike classical explanation methods that primarily focus on the local feature attribution, Agg$^2$Exp enables a more comprehensive global view on the importance of predicted segments in 3D images. Our benchmarking experiments show that gradient-based voxel attributions are more faithful to the model's predictions than perturbation-based explanations. As a concrete use-case, we apply Agg$^2$Exp to discover knowledge acquired by the Swin UNEt TRansformer model trained on the TotalSegmentator v2 dataset for segmenting anatomical structures in computed tomography medical images. Agg$^2$Exp facilitates the explanatory analysis of large segmentation models beyond their predictive performance. 
 
 
 
@@ -38,23 +39,21 @@ Example aggregated explanations are available at `data/tsv2_test_aggregated_sg_e
 
 # Example Global Aggregated Attributions
 
-![](images/global_lung_lower_lobe_left_tsv2.png)
+![](images/global_lung_lower_lobe_left_tsv2.png) 
 
 ![](images/global_pulmonary_vein_tsv2.png)
-# Citation
-ArXiv preprint can be found [here](https://arxiv.org/abs/2407.16653).
 
-If you find this repository useful, please consider citing this paper:
+# Citation
+
+If you find this repository useful, please consider citing this [paper](https://openaccess.thecvf.com/content/WACV2025/html/Chrabaszcz_Aggregated_Attributions_for_Explanatory_Analysis_of_3D_Segmentation_Models_WACV_2025_paper.html):
 
 ```
-@article{chrabaszcz2024agg2exp,
-      title={Aggregated Attributions for Explanatory Analysis of 3D Segmentation Models}, 
-      author={Maciej Chrabaszcz and Hubert Baniecki and Piotr Komorowski and Szymon Płotka and Przemyslaw Biecek},
-      year={2024},
-      eprint={2407.16653},
-      archivePrefix={arXiv},
-      primaryClass={cs.CV},
-      url={https://arxiv.org/abs/2407.16653}, 
+@inproceedings{chrabaszcz2025agg2exp,
+      title     = {Aggregated Attributions for Explanatory Analysis of {3D} Segmentation Models}, 
+      author    = {Maciej Chrabaszcz and Hubert Baniecki and
+                   Piotr Komorowski and Szymon Płotka and Przemyslaw Biecek},
+      booktitle = {IEEE/CVF Winter Conference on Applications of Computer Vision},
+      year      = {2025}
 }
 ```
 
